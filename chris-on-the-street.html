@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Chris on the Street</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #172E42;
+    --harbour: #2B4F68;
+    --accent: #E98D25;
+    --cream: #F7F3E8;
+    --cream-mid: #EEE8D5;
+    --paper: #FFFFFF;
+    --stone: #6B7A85;
+    --yellow: #FFD500;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Public Sans', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    padding-inline: 16px;
+  }
+
+  /* ── SITE NAV ── */
+  .site-nav {
+    background: var(--ink);
+    margin-inline: -16px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .site-nav .wordmark {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .site-nav .wordmark span { color: var(--accent); }
+  .site-nav .back-link {
+    font-size: 0.8rem;
+    color: var(--cream);
+    text-decoration: none;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .site-nav .back-link:hover { opacity: 1; }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    background: var(--harbour);
+    margin-inline: -16px;
+    padding: 56px 32px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0; right: 0;
+    height: 32px;
+    background: var(--cream);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .page-header .eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .page-header h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 900;
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    color: var(--cream);
+    line-height: 1.05;
+    text-wrap: balance;
+    margin-bottom: 16px;
+  }
+  .page-header .sub {
+    font-size: 1rem;
+    color: rgba(247,243,232,0.78);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.55;
+  }
+
+  /* ── MAIN CONTENT LAYOUT ── */
+  .main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding-block: 48px 80px;
+  }
+
+  /* ── SECTION LABELS ── */
+  .section-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--cream-mid);
+  }
+
+  section + section { margin-top: 60px; }
+
+  /* ── VIDEO CARD ── */
+  .video-card {
+    background: var(--paper);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(23,46,66,0.10);
+    border: 1px solid var(--cream-mid);
+  }
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    background: var(--ink);
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+  .video-meta {
+    padding: 20px 24px 24px;
+  }
+  .video-meta .badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--cream);
+    color: var(--harbour);
+    border-radius: 4px;
+    padding: 3px 8px;
+    margin-bottom: 10px;
+  }
+  .video-meta h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .video-meta p {
+    font-size: 0.9rem;
+    color: var(--stone);
+    line-height: 1.55;
+  }
+
+  /* ── PODCAST CARDS ── */
+  .podcast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .podcast-card {
+    background: var(--paper);
+    border-radius: 10px;
+    padding: 22px;
+    box-shadow: 0 2px 10px rgba(23,46,66,0.08);
+    border: 1px solid var(--cream-mid);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .podcast-card .pod-icon {
+    width: 44px; height: 44px;
+    background: var(--harbour);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .podcast-card .pod-icon svg { width: 22px; height: 22px; fill: var(--cream); }
+  .podcast-card h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .podcast-card .pod-show {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .podcast-card p {
+    font-size: 0.88rem;
+    color: var(--stone);
+    line-height: 1.5;
+    flex: 1;
+  }
+  .podcast-card a {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--harbour);
+    text-decoration: none;
+    border-bottom: 1.5px solid currentColor;
+    width: fit-content;
+  }
+  .podcast-card a:hover { color: var(--accent); }
+
+  /* placeholder state */
+  .podcast-card.placeholder {
+    background: var(--cream-mid);
+    border: 2px dashed var(--stone);
+    opacity: 0.6;
+  }
+  .podcast-card.placeholder .note {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--stone);
+  }
+
+  /* ── SURVEY QUOTES ── */
+  .quote-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .quote-card {
+    background: var(--paper);
+    border-radius: 10px;
+    padding: 24px 24px 24px 28px;
+    box-shadow: 0 1px 8px rgba(23,46,66,0.07);
+    border-left: 4px solid var(--harbour);
+    position: relative;
+  }
+  .quote-card .q-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 6px;
+  }
+  .quote-card blockquote {
+    font-size: 0.95rem;
+    color: var(--ink);
+    line-height: 1.6;
+    font-style: italic;
+  }
+  .quote-card blockquote strong { font-style: normal; color: var(--harbour); }
+  .quote-card .source {
+    margin-top: 10px;
+    font-size: 0.75rem;
+    color: var(--stone);
+  }
+  .quote-card .source a { color: var(--stone); }
+
+  /* ── UPCOMING EVENT ── */
+  .event-card {
+    background: var(--ink);
+    border-radius: 12px;
+    padding: 28px 28px 28px 24px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    box-shadow: 0 3px 14px rgba(23,46,66,0.20);
+    flex-wrap: wrap;
+  }
+  .event-date-block {
+    background: var(--accent);
+    border-radius: 8px;
+    padding: 10px 14px;
+    text-align: center;
+    min-width: 60px;
+    flex-shrink: 0;
+  }
+  .event-date-block .month {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .event-date-block .day {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .event-body { flex: 1; min-width: 200px; }
+  .event-body .event-type {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .event-body h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+  .event-body p {
+    font-size: 0.9rem;
+    color: rgba(247,243,232,0.78);
+    line-height: 1.5;
+  }
+
+  /* ── CTA FOOTER ── */
+  .page-cta {
+    margin-top: 64px;
+    padding: 40px 28px;
+    background: var(--harbour);
+    border-radius: 14px;
+    text-align: center;
+    color: var(--cream);
+  }
+  .page-cta h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+  .page-cta p {
+    font-size: 0.95rem;
+    opacity: 0.82;
+    margin-bottom: 22px;
+    line-height: 1.55;
+  }
+  .btn-cta {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 0.05em;
+    padding: 13px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .btn-cta:hover { background: #f0a040; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 520px) {
+    .page-header { padding: 40px 16px 40px; }
+    .main { padding-block: 32px 56px; }
+    .event-card { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a class="wordmark" href="/">Chris Bouchard <span>Ward 6</span></a>
+  <a class="back-link" href="/">← Back to main site</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <p class="eyebrow">Media & Community</p>
+  <h1>Chris on the Street</h1>
+  <p class="sub">Interviews, surveys, debates and podcast appearances — Chris talking directly with Ward 6 residents and local media.</p>
+</header>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- VIDEO -->
+  <section>
+    <p class="section-label">Featured Video</p>
+    <div class="video-card">
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/iDPVjxdm71s"
+          title="Chris Bouchard – Ward 6 Campaign Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-meta">
+        <span class="badge">Campaign Video</span>
+        <h3>Meet Chris Bouchard — Your Ward 6 Candidate</h3>
+        <p>Chris shares why he's running, what matters most to Ward 6 residents, and how he'll bring practical, transparent leadership to Burlington City and Regional Council.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEDIA COVERAGE -->
+  <section>
+    <p class="section-label">Media Coverage</p>
+    <div class="podcast-grid">
+
+      <div class="podcast-card">
+        <div class="pod-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/></svg>
+        </div>
+        <div class="pod-show">Focus Burlington · 2026</div>
+        <h3>Affordability &amp; Taxes Survey</h3>
+        <p>"We need to get off our over reliance on residential property taxes...focus on creation and sustaining of local businesses."</p>
+        <a href="https://www.focusburlington.ca/survey2026taxes/" target="_blank">Read full response →</a>
+      </div>
+
+      <div class="podcast-card">
+        <div class="pod-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/></svg>
+        </div>
+        <div class="pod-show">Focus Burlington · 2026</div>
+        <h3>Managing City Finances Survey</h3>
+        <p>"The principles of collaboration and cooperation are crucial in determining which projects and programs will receive priority."</p>
+        <a href="https://www.focusburlington.ca/slicingthepie/" target="_blank">Read full response →</a>
+      </div>
+
+      <div class="podcast-card">
+        <div class="pod-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/></svg>
+        </div>
+        <div class="pod-show">Focus Burlington · 2026</div>
+        <h3>Ward 6 Candidate Survey</h3>
+        <p>Chris answers 12 questions on housing, safety, transparency, growth, civic leadership, and what success looks like in a first term.</p>
+        <a href="https://www.focusburlington.ca/candidatesurveyward6/" target="_blank">Read all responses →</a>
+      </div>
+
+      <div class="podcast-card">
+        <div class="pod-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+        </div>
+        <div class="pod-show">Burlington Gazette · 2026</div>
+        <h3>Ward 6 Debate — Oct 6</h3>
+        <p>All Ward 6 candidates meet at Grace United Church for a public all-candidates debate, covered by the Burlington Gazette.</p>
+        <a href="https://burlingtongazette.ca/ward-6-debate-scheduled-for-october-6th-at-grace-united-church/" target="_blank">Read article →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOCUS BURLINGTON SURVEY -->
+  <section>
+    <p class="section-label">Candidate Survey — Focus Burlington</p>
+    <div class="quote-list">
+
+      <div class="quote-card">
+        <p class="q-label">Affordability &amp; taxes</p>
+        <blockquote>"We need to get off our over reliance on residential property taxes to address budget shortfalls and focus on creation and sustaining of local businesses. Commercial property tax rates are essentially double the residential property tax rate."</blockquote>
+        <p class="source"><a href="https://www.focusburlington.ca/survey2026taxes/" target="_blank">Focus Burlington Candidate Survey, 2026</a></p>
+      </div>
+
+      <div class="quote-card">
+        <p class="q-label">Managing city finances</p>
+        <blockquote>"All councillors have a responsibility for the betterment to all wards not just their own, so there will always be competing interests with those financial limitations. The principles of collaboration and cooperation are crucial in determining which projects and programs will receive priority."</blockquote>
+        <p class="source"><a href="https://www.focusburlington.ca/slicingthepie/" target="_blank">Focus Burlington Candidate Survey, 2026</a></p>
+      </div>
+
+      <div class="quote-card">
+        <p class="q-label">Budget transparency</p>
+        <blockquote>"The 500 plus page budget is complicated and confusing? Who would have thought...it needs to be presented in a way that any citizen can easily understand."</blockquote>
+        <p class="source"><a href="https://www.focusburlington.ca/candidatesurveyward6/" target="_blank">Focus Burlington Candidate Survey, 2026</a></p>
+      </div>
+
+      <div class="quote-card">
+        <p class="q-label">Housing</p>
+        <blockquote>"Burlington needs to play a pivotal role along with the Provincial and Federal levels of government...Residents have been squeezed by high costs in all facets of their lives that you simply can't squeeze blood from a stone."</blockquote>
+        <p class="source"><a href="https://www.focusburlington.ca/candidatesurveyward6/" target="_blank">Focus Burlington Candidate Survey, 2026</a></p>
+      </div>
+
+      <div class="quote-card">
+        <p class="q-label">Public safety</p>
+        <blockquote>"I'm all for additional resources for Halton Regional Police and community organizations to be able to partner together to address local issues...Creating a recognized community organization/police partnership to address concerns is an ideal first step."</blockquote>
+        <p class="source"><a href="https://www.focusburlington.ca/candidatesurveyward6/" target="_blank">Focus Burlington Candidate Survey, 2026</a></p>
+      </div>
+
+      <div class="quote-card">
+        <p class="q-label">Resident engagement</p>
+        <blockquote>"Living in the ward for over 30 years I can honestly tell you the handful of times I met the councillor from my ward...How many people can point to their councillor and say that they have their contact information, they see them in the neighborhoods?"</blockquote>
+        <p class="source"><a href="https://www.focusburlington.ca/candidatesurveyward6/" target="_blank">Focus Burlington Candidate Survey, 2026</a></p>
+      </div>
+
+      <div class="quote-card">
+        <p class="q-label">What success looks like</p>
+        <blockquote>"That the people personally told me that I affected their lives in a positive manner, that I was able to help families be able to afford and thrive in Burlington...If everyone got to have their shade in tree because of the things we grew together then I'll absolutely consider it a success."</blockquote>
+        <p class="source"><a href="https://www.focusburlington.ca/candidatesurveyward6/" target="_blank">Focus Burlington Candidate Survey, 2026</a></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- UPCOMING: DEBATE -->
+  <section>
+    <p class="section-label">Upcoming</p>
+    <div class="event-card">
+      <div class="event-date-block">
+        <div class="month">Oct</div>
+        <div class="day">6</div>
+      </div>
+      <div class="event-body">
+        <p class="event-type">Candidate Debate</p>
+        <h3>Ward 6 All-Candidates Meeting</h3>
+        <p>Grace United Church, Burlington — All Ward 6 candidates on stage together. Free and open to the public. Come meet Chris in person and hear directly from everyone on the ballot.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="page-cta">
+    <h2>Have a question for Chris?</h2>
+    <p>He reads every message. Reach out directly and he'll get back to you — neighbour to neighbour.</p>
+    <a class="btn-cta" href="/#contact">Get in Touch</a>
+  </div>
+
+</main>
+
+</body>
+</html>
