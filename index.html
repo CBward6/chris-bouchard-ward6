@@ -193,6 +193,17 @@
   .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
   .footer-name { color: rgba(255,255,255,0.6); font-size: 0.8rem; }
   .footer-auth { color: rgba(255,255,255,0.35); font-size: 0.72rem; }
+
+  /* ── STREET PROMO ── */
+  .street-promo { background: var(--ink); padding: 72px 0; }
+  .street-promo-inner { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
+  .street-promo .section-eyebrow { color: var(--accent); }
+  .street-promo .section-title { color: #fff; }
+  .street-icon-cluster { display: flex; gap: 16px; align-items: center; }
+  .si { font-size: 3.2rem; opacity: 0.65; display: block; }
+  .si-b { font-size: 4rem; opacity: 0.85; }
+  @media (max-width: 640px) { .street-promo-inner { grid-template-columns: 1fr; } .street-promo-visual { display: none; } }
+
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6QGYEQWG1"></script>
@@ -247,6 +258,27 @@
   </section>
 
   <!-- PRIORITIES -->
+
+  <!-- CHRIS ON THE STREET PROMO -->
+  <section class="street-promo">
+    <div class="wrap street-promo-inner">
+      <div class="street-promo-text">
+        <div class="section-eyebrow">Out in the Community</div>
+        <h2 class="section-title" style="margin-bottom:12px;">See Chris on the Street</h2>
+        <p style="color:#4a5a68;font-size:1rem;max-width:46ch;line-height:1.7;margin-bottom:28px;">Knocking on doors, attending debates, and hearing what Ward 6 residents actually care about. Watch the latest conversations and read what neighbours are saying.</p>
+        <a href="chris-on-the-street.html" class="btn btn-primary">Watch &amp; Read &rarr;</a>
+      </div>
+      <div class="street-promo-visual" aria-hidden="true">
+        <div class="street-icon-cluster">
+          <span class="si si-a">&#128483;</span>
+          <span class="si si-b">&#127968;</span>
+          <span class="si si-c">&#127897;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END CHRIS ON THE STREET PROMO -->
+
   <section id="priorities" class="priorities">
     <div class="wrap">
       <div class="section-eyebrow">Priorities</div>
