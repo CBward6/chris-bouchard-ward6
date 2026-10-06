@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F7F3E8">
+<title>Facts | Chris Bouchard for Ward 6, Burlington</title>
+<meta name="description" content="Where Chris Bouchard stands — specific, platform-level facts on local business, safety, affordability, community investment, and Millcroft.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8BN32X6X3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8BN32X6X3');
+</script>
+
+<style>
+  :root {
+    --ink: #172E42;
+    --harbour: #2B4F68;
+    --accent: #E08C20;
+    --accent-dark: #7A5228;
+    --cream: #F7F3E8;
+    --cream-mid: #EEE8D5;
+    --paper: #FFFFFF;
+    --stone: #6B7A85;
+    --radius: 6px;
+    --maxw: 1100px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  :root { color-scheme: light; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--cream);
+  }
+
+  /* ── NAV ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--ink);
+    padding: 0 24px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 700; color: #fff; text-decoration: none; white-space: nowrap; }
+  nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 28px; align-items: center; }
+  nav a { text-decoration: none; font-weight: 600; font-size: 0.88rem; color: rgba(255,255,255,0.78); letter-spacing: 0.02em; transition: color .15s; }
+  nav a:hover, nav a[aria-current="page"] { color: #fff; }
+  .nav-cta {
+    background: var(--accent);
+    color: #fff !important;
+    padding: 7px 16px;
+    border-radius: var(--radius);
+    font-size: 0.82rem !important;
+  }
+  .nav-cta:hover { background: #D4801F !important; }
+  .nav-toggle { display: none; }
+
+  @media (max-width: 700px) {
+    nav ul { position: fixed; inset: 58px 0 auto 0; background: var(--ink); flex-direction: column; gap: 0; padding: 8px 0 16px; transform: translateY(-110%); transition: transform .25s ease; }
+    nav ul.open { transform: translateY(0); }
+    nav a { display: block; padding: 12px 28px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-cta { margin: 8px 28px 0; text-align: center; }
+    .nav-toggle { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; background: none; border: 1.5px solid rgba(255,255,255,0.4); border-radius: 4px; cursor: pointer; }
+    .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after { content: ""; display: block; width: 16px; height: 2px; background: #fff; position: relative; }
+    .nav-toggle span::before { position: absolute; top: -5px; }
+    .nav-toggle span::after { position: absolute; top: 5px; }
+  }
+
+  /* ── PAGE HERO ── */
+  .page-hero {
+    background: var(--harbour);
+    color: #fff;
+    padding: 64px 24px 56px;
+    text-align: center;
+  }
+  .page-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .page-hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin: 0 0 16px;
+    line-height: 1.15;
+  }
+  .page-hero p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.82);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ── LAYOUT ── */
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* ── FACT SECTION ── */
+  .fact-section {
+    padding: 56px 24px;
+    border-bottom: 1px solid var(--cream-mid);
+  }
+  .fact-section:last-of-type { border-bottom: none; }
+  .fact-section:nth-child(even) { background: var(--paper); }
+  .fact-inner { max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; }
+
+  .fact-label {
+    position: sticky;
+    top: 80px;
+  }
+  .fact-icon { font-size: 2.4rem; margin-bottom: 10px; display: block; }
+  .fact-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 6px;
+    line-height: 1.25;
+  }
+  .fact-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+
+  .fact-bullets ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .fact-bullets li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 0.97rem;
+    line-height: 1.55;
+    color: #2e3d4a;
+  }
+  .fact-bullets li::before {
+    content: "→";
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── BIO FACTS ── */
+  .bio-section {
+    background: var(--harbour);
+    color: #fff;
+    padding: 56px 24px;
+  }
+  .bio-inner { max-width: var(--maxw); margin: 0 auto; }
+  .bio-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .bio-inner h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    margin: 0 0 32px;
+  }
+  .bio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .bio-fact {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    font-size: 0.93rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.9);
+  }
+  .bio-fact strong {
+    display: block;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    color: var(--accent);
+  }
+
+  /* ── CTA BAND ── */
+  .cta-band {
+    background: var(--ink);
+    color: #fff;
+    text-align: center;
+    padding: 48px 24px;
+  }
+  .cta-band h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    margin: 0 0 12px;
+  }
+  .cta-band p { color: rgba(255,255,255,0.75); margin: 0 0 28px; }
+  .btn-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 14px 32px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: background .15s;
+  }
+  .btn-primary:hover { background: #D4801F; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0f1e2b;
+    color: rgba(255,255,255,0.55);
+    font-size: 0.82rem;
+    text-align: center;
+    padding: 24px;
+  }
+  .footer-name { display: block; color: rgba(255,255,255,0.8); font-weight: 600; margin-bottom: 4px; }
+  footer a { color: rgba(255,255,255,0.55); text-decoration: underline; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .fact-inner { grid-template-columns: 1fr; gap: 20px; }
+    .fact-label { position: static; }
+    .fact-icon { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">Chris Bouchard · Ward 6</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle"><span></span></button>
+  <nav>
+    <ul id="navList">
+      <li><a href="index.html#priorities">Priorities</a></li>
+      <li><a href="index.html#about">About Chris</a></li>
+      <li><a href="facts.html" aria-current="page">Facts</a></li>
+      <li><a href="chris-on-the-street.html">Chris on the Street</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-eyebrow">Ward 6 · Burlington · October 26, 2026</div>
+  <h1>The facts on where Chris stands.</h1>
+  <p>Short, specific, and on the record. Ward 6 has heard enough general promises — these are positions you can hold Chris to.</p>
+</section>
+
+<!-- PRIORITY 1: LOCAL BUSINESS -->
+<section class="fact-section">
+  <div class="fact-inner">
+    <div class="fact-label">
+      <span class="fact-icon">🏘️</span>
+      <h2 class="fact-title">Pro-Local Business</h2>
+      <span class="fact-tag">Economic Priority</span>
+    </div>
+    <div class="fact-bullets">
+      <ul>
+        <li>Push for local hiring preferences in city contracts and RFPs — Ward 6 businesses first.</li>
+        <li>Advocate for tax policies that reduce the city's reliance on residential property taxes by growing the commercial base.</li>
+        <li>Support youth employment initiatives in Ward 6 to keep young people engaged locally.</li>
+        <li>Oppose unnecessary red tape and permit delays that slow down small business openings.</li>
+        <li>Work to reduce overhead in city operations so savings can be passed back to residents and local employers.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRIORITY 2: COMMUNITY SAFETY -->
+<section class="fact-section">
+  <div class="fact-inner">
+    <div class="fact-label">
+      <span class="fact-icon">🛡️</span>
+      <h2 class="fact-title">Community Safety</h2>
+      <span class="fact-tag">Public Priority</span>
+    </div>
+    <div class="fact-bullets">
+      <ul>
+        <li>Convene police, community services, and provincial partners at the same table — not in separate silos.</li>
+        <li>Advocate directly to Queen's Park for provincial funding of mental health and housing supports that municipalities cannot afford to carry alone.</li>
+        <li>Reform the escorted e-scooter and e-bike program, which has created documented safety and accountability gaps on Ward 6 streets.</li>
+        <li>Push for community-based early intervention programs that reduce downstream policing costs.</li>
+        <li>Oppose approaches that treat visible homelessness as a bylaw problem rather than a housing and health problem.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRIORITY 3: AFFORDABILITY -->
+<section class="fact-section">
+  <div class="fact-inner">
+    <div class="fact-label">
+      <span class="fact-icon">📉</span>
+      <h2 class="fact-title">Affordability</h2>
+      <span class="fact-tag">Fiscal Priority</span>
+    </div>
+    <div class="fact-bullets">
+      <ul>
+        <li>Push for spending discipline and line-by-line accountability before every budget vote.</li>
+        <li>Call out wasteful programs publicly — the speed camera signage rollout is the example: the city spent money erecting signs after the fact, only for the province to ban the program entirely.</li>
+        <li>Oppose tax increases that are not tied to measurable service improvements Ward 6 residents will actually see.</li>
+        <li>Burlington's property taxes rose 44.91% over the past eight years — a no-vote that still passes every year did not protect Ward 6 families.</li>
+        <li>Support development that generates its own revenue rather than further burdening residential ratepayers.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRIORITY 4: COMMUNITY INVESTMENT -->
+<section class="fact-section">
+  <div class="fact-inner">
+    <div class="fact-label">
+      <span class="fact-icon">📍</span>
+      <h2 class="fact-title">Community Investment</h2>
+      <span class="fact-tag">Infrastructure Priority</span>
+    </div>
+    <div class="fact-bullets">
+      <ul>
+        <li>Coordinate signal timing along Brant Street, Guelph Line, Walkers Line, and Appleby Line — a fixable problem that costs nothing except political will.</li>
+        <li>Push for snow gate systems on residential plows so driveways stop getting buried after every pass.</li>
+        <li>Improve public transit reliability on Ward 6 routes through direct advocacy at the Regional level.</li>
+        <li>Prioritize maintenance of existing parks, trails, and community spaces before new capital projects.</li>
+        <li>Reinvest in the services Ward 6 residents actually use daily, not projects driven by optics.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRIORITY 5: MILLCROFT -->
+<section class="fact-section">
+  <div class="fact-inner">
+    <div class="fact-label">
+      <span class="fact-icon">🏭</span>
+      <h2 class="fact-title">Millcroft's Next Chapter</h2>
+      <span class="fact-tag">Ward 6 Issue</span>
+    </div>
+    <div class="fact-bullets">
+      <ul>
+        <li>Demand public updates from the province on the Ministerial Zoning Order (MZO) process — residents deserve to know where this stands.</li>
+        <li>Require clear, public criteria for any future development phase before a decision is made, not after.</li>
+        <li>Brownfield and underutilized sites must be prioritized before any public greenspace is touched — this is a firm position, not a preference.</li>
+        <li>Commit to a specific next step — not a general statement — whichever way the Minister's decision goes.</li>
+        <li>Aggressively fight to restore Millcroft residents' green space and hold all parties accountable to that outcome.</li>
+        <li>The developer had fences up and construction was planned for spring. This is not a future threat — it is the current reality.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BIO FACTS -->
+<section class="bio-section">
+  <div class="bio-inner">
+    <div class="bio-eyebrow">About Chris</div>
+    <h2>The facts on who Chris is.</h2>
+    <div class="bio-grid">
+      <div class="bio-fact">
+        <strong>Ward 6 Roots</strong>
+        Family moved to Headon Forest from Quebec over 30 years ago. Attended St. Gabriel and Notre Dame schools in Burlington.
+      </div>
+      <div class="bio-fact">
+        <strong>Professional Background</strong>
+        6+ years of project management experience and 10+ years in sales, account management, and business development.
+      </div>
+      <div class="bio-fact">
+        <strong>Sectors</strong>
+        Managed senior relationships across public, private, and non-profit sectors — school board facility managers, fire chiefs, and Canadian Nuclear Society representatives.
+      </div>
+      <div class="bio-fact">
+        <strong>Delivery Record</strong>
+        Completed major contracted projects for Apple, Home Depot, and FedEx.
+      </div>
+      <div class="bio-fact">
+        <strong>On the Ballot</strong>
+        Filed nomination papers August 4, 2026. Officially on the ballot for Ward 6 City and Regional Councillor, October 26, 2026.
+      </div>
+      <div class="bio-fact">
+        <strong>No Political Career</strong>
+        Not a career politician. A neighbour who has lived the same Ward 6 reality as the people he's asking to represent.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <h2>Have questions? Get in touch.</h2>
+  <p>Chris reads every message. If something here isn't clear or you want to dig deeper, reach out directly.</p>
+  <a href="index.html#contact" class="btn-primary">Contact Chris</a>
+</section>
+
+<footer>
+  <span class="footer-name">Chris Bouchard for Ward 6, Burlington — October 26, 2026</span>
+  Running for City and Regional Councillor, Ward 6, Burlington.<br>
+  This website is authorized by Chris Bouchard, candidate for Ward 6, Burlington.
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const navList = document.getElementById('navList');
+  toggle.addEventListener('click', () => {
+    const open = navList.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
+
+</body>
+</html>
