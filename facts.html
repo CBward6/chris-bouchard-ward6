@@ -172,6 +172,33 @@
     margin-top: 1px;
   }
 
+
+  /* ── BY THE NUMBERS ── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px;
+    margin: 0 0 28px;
+  }
+  .stat {
+    background: var(--paper);
+    border: 1px solid var(--cream-mid);
+    border-top: 3px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+  }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-lbl { font-size: 0.84rem; color: var(--stone); margin-top: 8px; line-height: 1.4; }
+  .fact-source { font-size: 0.78rem; color: var(--stone); margin: 18px 0 0; line-height: 1.5; }
+  .fact-source a { color: var(--accent-dark); }
+
   /* ── BIO FACTS ── */
   .bio-section {
     background: var(--harbour);
@@ -286,6 +313,30 @@
   <p>Short, specific, and on the record. Ward 6 has heard enough general promises — these are positions you can hold Chris to.</p>
 </section>
 
+<!-- BY THE NUMBERS -->
+<section class="fact-section">
+  <div class="fact-inner">
+    <div class="fact-label">
+      <span class="fact-icon">🧮</span>
+      <h2 class="fact-title">By the Numbers</h2>
+      <span class="fact-tag">2026 City Budget</span>
+    </div>
+    <div class="fact-bullets">
+      <div class="stat-grid">
+        <div class="stat"><div class="stat-num">$387M</div><div class="stat-lbl">City of Burlington 2026 operating budget</div></div>
+        <div class="stat"><div class="stat-num">72%</div><div class="stat-lbl">of it ($282M) comes from property taxes</div></div>
+        <div class="stat"><div class="stat-num">51&cent;</div><div class="stat-lbl">of each tax bill dollar goes to the City. The Region and school boards get the rest.</div></div>
+      </div>
+      <ul>
+        <li>Residential property taxes fund 58% of city revenue. Commercial property taxes fund just 14%. That imbalance is the pressure behind every tax increase.</li>
+        <li>The fix is a bigger commercial tax base, so businesses carry more of the load and homeowners carry less.</li>
+        <li>Every dollar the city earns outside your tax bill is a dollar it doesn't have to take from you.</li>
+      </ul>
+      <p class="fact-source">Sources: <a href="https://www.burlington.ca/en/council-and-city-administration/resources/Budget-and-Finances/Proposed-Budget-Book/2026/2026-Proposed-Budget-Book-01-Budget-Summary.pdf" target="_blank" rel="noopener">City of Burlington 2026 Budget Summary</a> &middot; <a href="https://burlington.ca/en/property-taxes/understanding-your-property-tax-bill.aspx" target="_blank" rel="noopener">Understanding your property tax bill</a></p>
+    </div>
+  </div>
+</section>
+
 <!-- PRIORITY 1: LOCAL BUSINESS -->
 <section class="fact-section">
   <div class="fact-inner">
@@ -296,9 +347,12 @@
     </div>
     <div class="fact-bullets">
       <ul>
-        <li>Push for local hiring preferences in city contracts and RFPs — Ward 6 businesses first.</li>
+        <li>Push for local hiring preferences in city contracts and RFPs: Burlington businesses first.</li>
         <li>Advocate for tax policies that reduce the city's reliance on residential property taxes by growing the commercial base.</li>
-        <li>Support youth employment initiatives in Ward 6 to keep young people engaged locally.</li>
+        <li>Fill the empty storefronts. The residential tax rate is about 0.97%; the commercial rate is slightly more than 2%. Every vacant lot or &ldquo;for lease&rdquo; unit that opens grows the commercial tax base and takes pressure off homeowners.</li>
+        <li>New businesses bring licence and permit revenue to the city, plus steady work for local contractors and trades.</li>
+        <li>Local businesses hire local kids. With youth unemployment climbing in Canada, a first job helps family budgets and gives young people a r&eacute;sum&eacute; to build on.</li>
+        <li>Turn cost centres into profit centres: open city facilities to local pop-up shops for a day, a weekend or a month, with permit revenue coming back to the city.</li>
         <li>Oppose unnecessary red tape and permit delays that slow down small business openings.</li>
         <li>Work to reduce overhead in city operations so savings can be passed back to residents and local employers.</li>
       </ul>
@@ -357,7 +411,7 @@
     <div class="fact-bullets">
       <ul>
         <li>Coordinate signal timing along Brant Street, Guelph Line, Walkers Line, and Appleby Line — a fixable problem that costs nothing except political will.</li>
-        <li>Push for snow gate systems on residential plows so driveways stop getting buried after every pass.</li>
+        <li><span>Push for snow gate systems on residential plows so driveways stop getting buried after every pass. Shovelling heavy snow is linked to a higher risk of heart attack, so this is about safety, not just convenience (<a href="https://www.uhn.ca/corporate/News/Pages/snow_shovelling_may_increase_heart_attack_risk.aspx" target="_blank" rel="noopener" style="color:var(--accent-dark)">CMAJ, 2017</a>).</span></li>
         <li>Improve public transit reliability on Ward 6 routes through direct advocacy at the Regional level.</li>
         <li>Prioritize maintenance of existing parks, trails, and community spaces before new capital projects.</li>
         <li>Reinvest in the services Ward 6 residents actually use daily, not projects driven by optics.</li>
