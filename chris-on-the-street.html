@@ -172,6 +172,20 @@
     line-height: 1.55;
   }
 
+  .video-wrapper.vertical {
+    padding-bottom: 0;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .video-card.vertical-card .video-wrapper { background: var(--ink); }
+  .video-card.vertical-card { display: grid; grid-template-columns: minmax(0, 360px) 1fr; align-items: center; }
+  @media (max-width: 640px) {
+    .video-card.vertical-card { grid-template-columns: 1fr; }
+  }
+
   /* ── PODCAST CARDS ── */
   .podcast-grid {
     display: grid;
@@ -406,6 +420,27 @@
         <span class="badge">Campaign Video</span>
         <h3>Meet Chris Bouchard — Your Ward 6 Candidate</h3>
         <p>Chris shares why he's running, what matters most to Ward 6 residents, and how he'll bring practical, transparent leadership to Burlington City and Regional Council.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PODCAST -->
+  <section>
+    <p class="section-label">Podcast</p>
+    <div class="video-card vertical-card">
+      <div class="video-wrapper vertical">
+        <iframe
+          src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1657306632779856%2F&show_text=false&width=360"
+          title="Chris Bouchard on the Pages of Me podcast"
+          scrolling="no"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-meta">
+        <span class="badge">Podcast</span>
+        <h3>Chris on the Pages of Me Podcast</h3>
+        <p>Chris sat down with host Kezia Royer on the Pages of Me podcast. Here's a clip from the conversation.</p>
       </div>
     </div>
   </section>
